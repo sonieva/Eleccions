@@ -16,12 +16,12 @@ try:
     with open(path, "r") as fitxer:
         for linia in fitxer:
             codi = linia[8:14]
-            nomCurt = " ".join(linia[14:64].split())
+            nomCurt = " ".join(linia[14:64].split()).replace('"','')
             nomLlarg = " ".join(linia[64:214].split())
             codiProvincial = linia[214:220]
             codiAutonomic = linia[220:226]
             codiNacional = linia[226:232]
-            insert += f"\t(1,'{codi}','{nomCurt}','{nomLlarg}','{codiProvincial}','{codiAutonomic}','{codiNacional}') ,\n"
+            insert += f'\t(1,"{codi}","{nomCurt}","{nomLlarg}","{codiProvincial}","{codiAutonomic}","{codiNacional}") ,\n'
 except OSError as e:
     print("No s'ha pogut obrir el fitxer " + path)
 
