@@ -1,2 +1,2 @@
 # Apartat 1
-Snati puto
+## Importació de dades bàsiques
