@@ -7,6 +7,7 @@ adequar a la pràctica.
 ## Modificació estructura
 Hem hagut de modificar l'estructura creada anteriorment per adaptarla als diferents errors que hem a anant trobant.
 Totes les sentencies utilitzades estan a l'arxiu [BD_eleccions_v2.sql](https://github.com/sonieva/Eleccions/blob/master/Apartat%201/BD_eleccions_v2.sql)
+
 ## Introducció de dades bàsiques
 En aquest apartat hem introduït manualment la seguent sentencia SQL:<br>
 
@@ -18,4 +19,11 @@ VALUES (1,"Eleccions Generals 2019", "2019-04-28")
 I ha quedat aixi a la BD:<br>
 ![Captura taula "Eleccions"](https://github.com/sonieva/Eleccions/blob/master/Documentaci%C3%B3/Imatges/taula_eleccions.png)
 
-## Importació de partits polítics/candidatures
+
+# Consultes SQL Categoria 1
+# Ex 1
+## Fes una consulta on Ens demani el codi_candidatura i el nom_llarg on el nom_curt sigui EB i ordena de forma descendent candidatura_id
+SELECT codi_candidatura,nom_llarg FROM candidatures
+Where nom_curt="EB"
+ORDER BY candidatura_id DESC;
+# Ex 2
