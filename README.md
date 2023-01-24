@@ -5,4 +5,9 @@ en el workbench tenim l'opció d'exportar-lo en DML i obtenir totes les sentènc
 adequar a la pràctica.
 
 ## Introducció de dades bàsiques
-En aquest apartat hem introduït manualment la seguent sentencia SQL
+En aquest apartat hem introduït manualment la seguent sentencia SQL: 
+`INSERT INTO eleccions (eleccio_id, nom, data)
+VALUES (1,"Eleccions Generals 2019", "2019-04-28")`
+
+I ha quedat aixi a la BD:<br>
+![Captura taula "Eleccions"](https://github.com/sonieva/Eleccions/blob/master/Documentaci%C3%B3/Imatges/taula_eleccions.png)
