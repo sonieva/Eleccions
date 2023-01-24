@@ -25,9 +25,7 @@ try:
 except OSError as e:
     print("No s'ha pogut obrir el fitxer " + path)
 
-insert=insert.split(" ")
-insert[-1] = ";"
-insert=" ".join(insert)
+insert=insert[:-1] + ";"
 cursor.execute(insert)
 cnx.commit()
 cursor.close()
