@@ -1,7 +1,7 @@
 USE Grup2_eleccions;
 
 INSERT INTO eleccions (eleccio_id, nom, data)
-VALUES (1,"Eleccions Generals 2019", "2019-04-28")
+VALUES (1,"Eleccions Generals 2019", "2019-04-28");
 
 ALTER TABLE candidats 
 DROP FOREIGN KEY fk_candidats_persones1;
