@@ -8,3 +8,6 @@ adequar a la pràctica.
 En aquest apartat hem introduït manualment la seguent sentencia SQL: 
 `INSERT INTO eleccions (eleccio_id, nom, data)
 VALUES (1,"Eleccions Generals 2019", "2019-04-28")`
+
+I ha quedat aixi a la BD:
+![Captura taula "Eleccions"](Documentació\Imatges\taula_eleccions.png)
