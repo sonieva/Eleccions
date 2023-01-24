@@ -21,9 +21,9 @@ I ha quedat aixi a la BD:<br>
 
 
 # Consultes SQL Categoria 1
-# Ex 1
-## Fes una consulta on Ens demani el codi_candidatura i el nom_llarg on el nom_curt sigui EB i ordena de forma descendent candidatura_id
+### Ex 1
+#### Fes una consulta on Ens demani el codi_candidatura i el nom_llarg on el nom_curt sigui EB i ordena de forma descendent candidatura_id
 SELECT codi_candidatura,nom_llarg FROM candidatures
 Where nom_curt="EB"
 ORDER BY candidatura_id DESC;
-# Ex 2
+### Ex 2
