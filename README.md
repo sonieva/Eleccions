@@ -54,3 +54,4 @@ WHERE tipus="S";
 SELECT p.nom,p.codi_ine,v.candidatura_id,v.vots FROM vots_candidatures_prov v
 INNER JOIN provincies p ON p.provincia_id = v.provincia_id
 ORDER BY vots;
+## fdf s
