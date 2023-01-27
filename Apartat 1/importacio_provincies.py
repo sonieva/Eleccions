@@ -20,10 +20,13 @@ try:
                 comunitat_aut_id = cursor.fetchone()
                 nom = " ".join(linia[14:64].split())
                 codi_ine = linia[11:13]
-                escons = linia[149:155]
+                escons = int(linia[149:155])
                 insert += f'\t({comunitat_aut_id[0]},"{nom}","{codi_ine}",{escons}),\n'
 except OSError as e:
     print("No s'ha pogut obrir el fitxer " + path)
 
 insert = insert[:-2] + ";"
-print(insert)
+cursor.execute(insert)
+cnx.commit()
+cursor.close()
+cnx.close()
