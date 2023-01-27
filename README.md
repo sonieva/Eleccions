@@ -48,9 +48,6 @@ ORDER BY vots ASC;
 SELECT num_ordre, candidat_id FROM candidats
 WHERE tipus="S";
 
-## Categoria 2
-### Ex 1
-#### Fes una consulta on demani el nom de la provincia, el seu codi_ine, candidatura_id i els vots per cada candidatura, i ordena per quantitat de vots.
-SELECT p.nom,p.codi_ine,v.candidatura_id,v.vots FROM vots_candidatures_prov v
-INNER JOIN provincies p ON p.provincia_id = v.provincia_id
-ORDER BY vots;
+
+
+
