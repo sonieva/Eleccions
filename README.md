@@ -70,3 +70,15 @@ SELECT c.codi_ine, p.provincia_id, p.nom AS nom_pro, m.municipi_id, m.nom AS nom
     INNER JOIN provincies p ON c.comunitat_aut_id = p.comunitat_aut_id
     INNER JOIN municipis m ON p.provincia_id = m.provincia_id
     WHERE upper(c.nom) = 'CATALUNYA';
+
+#### Fes una consulta on demani el nom de la provincia, el seu codi_ine, candidatura_id i els vots per cada candidatura, i ordena per quantitat de vots.
+SELECT p.nom,p.codi_ine,v.candidatura_id,v.vots FROM vots_candidatures_prov v
+INNER JOIN provincies p ON p.provincia_id = v.provincia_id
+ORDER BY vots;
+
+## Per cada municipi volem saber el seu nom, a la provincia a la que pertany a mes volem saber el nom de les eleccions a mes de la seva data. També volem que ens filtri per municipis que tinguin mes de 4 cops vots valids que vots en blanc.
+SELECT m.nom as nom_municipi, p.nom as nom_provincia, e.nom as nom_eleccions, e.data as data_eleccions FROM municipis m
+INNER JOIN provincies p ON m.provincia_id=p.provincia_id
+INNER JOIN eleccions_municipis em ON em.municipi_id=m.municipi_id
+INNER JOIN eleccions e ON e.eleccio_id=em.eleccio_id
+WHERE vots_valids>4*vots_blanc;
