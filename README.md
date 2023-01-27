@@ -48,14 +48,12 @@ ORDER BY vots ASC;
 SELECT num_ordre, candidat_id FROM candidats
 WHERE tipus="S";
 
-<<<<<<< HEAD
 ## Categoria 2
 ### Ex 1
 #### Fes una consulta on demani el nom de la provincia, el seu codi_ine, candidatura_id i els vots per cada candidatura, i ordena per quantitat de vots.
 SELECT p.nom,p.codi_ine,v.candidatura_id,v.vots FROM vots_candidatures_prov v
 INNER JOIN provincies p ON p.provincia_id = v.provincia_id
 ORDER BY vots;
-=======
 
 ## CATEGORIA 2
 ## DIGAM EL NOM COMPLERT DE TOTES LES PERSONES MES LA CANDIDATURA I EL NOM LLARG DE LA CANDIDATURA.
@@ -72,4 +70,3 @@ SELECT c.codi_ine, p.provincia_id, p.nom AS nom_pro, m.municipi_id, m.nom AS nom
     INNER JOIN provincies p ON c.comunitat_aut_id = p.comunitat_aut_id
     INNER JOIN municipis m ON p.provincia_id = m.provincia_id
     WHERE upper(c.nom) = 'CATALUNYA';
->>>>>>> 765ff6e9c8165b4748c00b2ed7c0c704dd84d226
