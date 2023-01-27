@@ -37,6 +37,15 @@ SELECT nom,cog1,cog2,dni
 SELECT COUNT(*)
 	FROM candidatures
     WHERE nom_curt = 'PP';
+### Ex 4
+## Busca per el municipi_id 2 cuants vots te cada candidatura _id per aquest municipi, i ordena de manera asc per vots
+SELECT candidatura_id,vots FROM vots_candidatures_mun
+WHERE municipi_id=2
+ORDER BY vots ASC;
 
+## Ex 5
+## Busca els candidats que siguin de tipus suplent S, nomes mostran el seu num_ordre i el candidat_id
+SELECT num_ordre, candidat_id FROM candidats
+WHERE tipus="S";
 
 
