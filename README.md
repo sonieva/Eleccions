@@ -55,7 +55,7 @@ SELECT p.nom,p.codi_ine,v.candidatura_id,v.vots FROM vots_candidatures_prov v
 INNER JOIN provincies p ON p.provincia_id = v.provincia_id
 ORDER BY vots;
 
-## CATEGORIA 2
+
 ## DIGAM EL NOM COMPLERT DE TOTES LES PERSONES MES LA CANDIDATURA I EL NOM LLARG DE LA CANDIDATURA.
 SELECT p.nom, p.cog1, p.cog2, c.candidat_id, c1.nom_llarg
 	FROM persones p
@@ -82,3 +82,4 @@ INNER JOIN provincies p ON m.provincia_id=p.provincia_id
 INNER JOIN eleccions_municipis em ON em.municipi_id=m.municipi_id
 INNER JOIN eleccions e ON e.eleccio_id=em.eleccio_id
 WHERE vots_valids>4*vots_blanc;
+
