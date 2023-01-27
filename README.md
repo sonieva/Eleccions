@@ -48,14 +48,8 @@ ORDER BY vots ASC;
 SELECT num_ordre, candidat_id FROM candidats
 WHERE tipus="S";
 
-## Categoria 2
-### Ex 1
-#### Fes una consulta on demani el nom de la provincia, el seu codi_ine, candidatura_id i els vots per cada candidatura, i ordena per quantitat de vots.
-SELECT p.nom,p.codi_ine,v.candidatura_id,v.vots FROM vots_candidatures_prov v
-INNER JOIN provincies p ON p.provincia_id = v.provincia_id
-ORDER BY vots;
 
-
+## CATEGORIA 2
 ## DIGAM EL NOM COMPLERT DE TOTES LES PERSONES MES LA CANDIDATURA I EL NOM LLARG DE LA CANDIDATURA.
 SELECT p.nom, p.cog1, p.cog2, c.candidat_id, c1.nom_llarg
 	FROM persones p
@@ -71,6 +65,11 @@ SELECT c.codi_ine, p.provincia_id, p.nom AS nom_pro, m.municipi_id, m.nom AS nom
     INNER JOIN municipis m ON p.provincia_id = m.provincia_id
     WHERE upper(c.nom) = 'CATALUNYA';
 
+#### Fes una consulta on demani el nom de la provincia, el seu codi_ine, candidatura_id i els vots per cada candidatura, i ordena per quantitat de vots.
+SELECT p.nom,p.codi_ine,v.candidatura_id,v.vots FROM vots_candidatures_prov v
+INNER JOIN provincies p ON p.provincia_id = v.provincia_id
+ORDER BY vots;
+
 ## Per cada municipi volem saber el seu nom, a la provincia a la que pertany a mes volem saber el nom de les eleccions a mes de la seva data. També volem que ens filtri per municipis que tinguin mes de 4 cops vots valids que vots en blanc.
 SELECT m.nom as nom_municipi, p.nom as nom_provincia, e.nom as nom_eleccions, e.data as data_eleccions FROM municipis m
 INNER JOIN provincies p ON m.provincia_id=p.provincia_id
@@ -78,3 +77,10 @@ INNER JOIN eleccions_municipis em ON em.municipi_id=m.municipi_id
 INNER JOIN eleccions e ON e.eleccio_id=em.eleccio_id
 WHERE vots_valids>4*vots_blanc;
 
+### Per cada provincia volem saber el seu nom y el total de vots que ha obtingut cada provincia a mes volem saber el nom de la comunitat autonoma que pertanyen y que es filtri per comunitat_aut_id = 1 i 2
+
+SELECT p.nom as nom_provincia, sum(vcp.vots) as vots, ca.nom as nom_comunitat_autonoma from provincies p
+INNER JOIN vots_candidatures_prov vcp ON p.provincia_id = vcp.provincia_id
+INNER JOIN comunitats_autonomes ca ON ca.comunitat_aut_id = p.comunitat_aut_id
+WHERE ca.comunitat_aut_id IN (1,2)
+GROUP BY p.provincia_id
