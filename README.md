@@ -32,5 +32,11 @@ SELECT nom,cog1,cog2,dni
     FROM persones
     WHERE dni IS NULL;
 
+### EX 3 
+## Cuantes candidatures té el PP?
+SELECT COUNT(*)
+	FROM candidatures
+    WHERE nom_curt = 'PP';
+
 
 
