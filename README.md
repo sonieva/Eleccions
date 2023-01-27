@@ -57,3 +57,10 @@ SELECT p.nom, p.cog1, p.cog2, c.candidat_id, c1.nom_llarg
     INNER JOIN candidatures c1 ON c.candidatura_id = c1.candidatura_id
     ORDER BY p.nom;
 
+## MOSTRA TOTES LES PROVINCIES I TOTS EL MUNICIPIS DE CATALUNYA(al nom de provincies li direm nom_pro i municipis nom_mun)
+# |codi_ine|pronvincia_id|nom_pro|municipi_id|nom_mun|
+SELECT c.codi_ine, p.provincia_id, p.nom AS nom_pro, m.municipi_id, m.nom AS nom_mun
+	FROM comunitats_autonomes c
+    INNER JOIN provincies p ON c.comunitat_aut_id = p.comunitat_aut_id
+    INNER JOIN municipis m ON p.provincia_id = m.provincia_id
+    WHERE upper(c.nom) = 'CATALUNYA';
