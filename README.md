@@ -27,3 +27,40 @@ SELECT codi_candidatura,nom_llarg FROM candidatures
 Where nom_curt="EB"
 ORDER BY candidatura_id DESC;
 ### Ex 2
+### Mostra totes les persones que no tenen DNI assignat
+SELECT nom,cog1,cog2,dni
+    FROM persones
+    WHERE dni IS NULL;
+
+### EX 3 
+## Cuantes candidatures té el PP?
+SELECT COUNT(*)
+	FROM candidatures
+    WHERE nom_curt = 'PP';
+### Ex 4
+## Busca per el municipi_id 2 cuants vots te cada candidatura _id per aquest municipi, i ordena de manera asc per vots
+SELECT candidatura_id,vots FROM vots_candidatures_mun
+WHERE municipi_id=2
+ORDER BY vots ASC;
+
+## Ex 5
+## Busca els candidats que siguin de tipus suplent S, nomes mostran el seu num_ordre i el candidat_id
+SELECT num_ordre, candidat_id FROM candidats
+WHERE tipus="S";
+
+
+## CATEGORIA 2
+## DIGAM EL NOM COMPLERT DE TOTES LES PERSONES MES LA CANDIDATURA I EL NOM LLARG DE LA CANDIDATURA.
+SELECT p.nom, p.cog1, p.cog2, c.candidat_id, c1.nom_llarg
+	FROM persones p
+    INNER JOIN candidats c ON p.persona_id = c.persona_id
+    INNER JOIN candidatures c1 ON c.candidatura_id = c1.candidatura_id
+    ORDER BY p.nom;
+
+## MOSTRA TOTES LES PROVINCIES I TOTS EL MUNICIPIS DE CATALUNYA(al nom de provincies li direm nom_pro i municipis nom_mun)
+# |codi_ine|pronvincia_id|nom_pro|municipi_id|nom_mun|
+SELECT c.codi_ine, p.provincia_id, p.nom AS nom_pro, m.municipi_id, m.nom AS nom_mun
+	FROM comunitats_autonomes c
+    INNER JOIN provincies p ON c.comunitat_aut_id = p.comunitat_aut_id
+    INNER JOIN municipis m ON p.provincia_id = m.provincia_id
+    WHERE upper(c.nom) = 'CATALUNYA';
