@@ -27,3 +27,8 @@ SELECT codi_candidatura,nom_llarg FROM candidatures
 Where nom_curt="EB"
 ORDER BY candidatura_id DESC;
 ### Ex 2
+### Mostra totes les persones que no tenen DNI assignat
+SELECT dni
+    FROM persones
+    WHERE dni IS NULL;
+
