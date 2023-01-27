@@ -49,5 +49,11 @@ SELECT num_ordre, candidat_id FROM candidats
 WHERE tipus="S";
 
 
-
+## CATEGORIA 2
+## DIGAM EL NOM COMPLERT DE TOTES LES PERSONES MES LA CANDIDATURA I EL NOM LLARG DE LA CANDIDATURA.
+SELECT p.nom, p.cog1, p.cog2, c.candidat_id, c1.nom_llarg
+	FROM persones p
+    INNER JOIN candidats c ON p.persona_id = c.persona_id
+    INNER JOIN candidatures c1 ON c.candidatura_id = c1.candidatura_id
+    ORDER BY p.nom;
 
