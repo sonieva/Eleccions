@@ -93,3 +93,11 @@ SELECT nom, concat(cog1," ",cog2) as cognoms, sexe
 FROM persones
 WHERE persona_id IN (SELECT persona_id FROM candidats
                         WHERE tipus="T")
+
+
+
+
+## Mostra la provinvia_id, nom, codi_ine, num_escons on la comunitat autonoma sigui Barcelona.
+SELECT provincia_id, nom, codi_ine, num_escons
+FROM provincies
+WHERE comunitat_aut_id = (SELECT comunitat_aut_id FROM provincies WHERE nom = 'Barcelona');
