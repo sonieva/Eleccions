@@ -26,6 +26,7 @@ I ha quedat aixi a la BD:<br>
 SELECT codi_candidatura,nom_llarg FROM candidatures
 Where nom_curt="EB"
 ORDER BY candidatura_id DESC;
+
 ### Ex 2
 ### Mostra totes les persones que no tenen DNI assignat
 SELECT nom,cog1,cog2,dni
@@ -37,6 +38,7 @@ SELECT nom,cog1,cog2,dni
 SELECT COUNT(*)
 	FROM candidatures
     WHERE nom_curt = 'PP';
+
 ### Ex 4
 ## Busca per el municipi_id 2 cuants vots te cada candidatura _id per aquest municipi, i ordena de manera asc per vots
 SELECT candidatura_id,vots FROM vots_candidatures_mun
@@ -78,7 +80,6 @@ INNER JOIN eleccions e ON e.eleccio_id=em.eleccio_id
 WHERE vots_valids>4*vots_blanc;
 
 ### Per cada provincia volem saber el seu nom y el total de vots que ha obtingut cada provincia a mes volem saber el nom de la comunitat autonoma que pertanyen y que es filtri per comunitat_aut_id = 1 i 2
-
 SELECT p.nom as nom_provincia, sum(vcp.vots) as vots, ca.nom as nom_comunitat_autonoma from provincies p
 INNER JOIN vots_candidatures_prov vcp ON p.provincia_id = vcp.provincia_id
 INNER JOIN comunitats_autonomes ca ON ca.comunitat_aut_id = p.comunitat_aut_id
@@ -88,8 +89,6 @@ GROUP BY p.provincia_id
 
 ### CATEGORIA 3
 ## Busca les persones amb el seu nom, cognoms y el seu sexe que pertanyin al tipus T (Titular)
-
-
 SELECT nom, concat(cog1," ",cog2) as cognoms, sexe 
 FROM persones
 WHERE persona_id IN (SELECT persona_id FROM candidats
