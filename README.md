@@ -84,3 +84,6 @@ INNER JOIN vots_candidatures_prov vcp ON p.provincia_id = vcp.provincia_id
 INNER JOIN comunitats_autonomes ca ON ca.comunitat_aut_id = p.comunitat_aut_id
 WHERE ca.comunitat_aut_id IN (1,2)
 GROUP BY p.provincia_id
+
+
+### CATEGORIA 3
