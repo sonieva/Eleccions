@@ -9,23 +9,23 @@ cnx = mysql.connector.connect(
 )
 cursor = cnx.cursor()
 insert = ("INSERT INTO municipis"
-          "(codi_ine,districte,nom,provincia_id)\n"
+          "(codi_ine,nom,provincia_id,districte)\n"
           "VALUES")
 try:
     with open(path, "r") as fitxer:
         for linia in fitxer:
             provincia_id = cursor.execute(f"SELECT provincia_id FROM provincies WHERE codi_ine = '{linia[11:13]}'")
             provincia_id = cursor.fetchone()
+            nom = " ".join(linia[18:118].split())
             codi_ine = linia[13:16]
-            if linia[16:18] == "99":
-                nom = " ".join(linia[18:118].split())
-                insert += f'\t("{codi_ine}","{nom}",{provincia_id[0]}) ,\n'
-            else:
-                districte = " ".join(linia[18:118].split())
-                insert += f'\t("{codi_ine}","{districte}",{provincia_id[0]}) ,\n'
+            districte = linia[16:18]
+            insert += f'\t("{codi_ine}","{nom}",{provincia_id[0]},"{districte}"),\n'
             
 except OSError as e:
     print("No s'ha pogut obrir el fitxer " + path)
 
 insert = insert[:-2] + ";"
-print(insert)
+cursor.execute(insert)
+cnx.commit()
+cursor.close()
+cnx.close()
