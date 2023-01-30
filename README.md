@@ -87,3 +87,10 @@ GROUP BY p.provincia_id
 
 
 ### CATEGORIA 3
+## Busca les persones amb el seu nom, cognoms y el seu sexe que pertanyin al tipus T (Titular)
+
+
+SELECT nom, concat(cog1," ",cog2) as cognoms, sexe 
+FROM persones
+WHERE persona_id IN (SELECT persona_id FROM candidats
+                        WHERE tipus="T")
