@@ -13,3 +13,7 @@ MODIFY COLUMN persona_id INT UNSIGNED AUTO_INCREMENT;
 ALTER TABLE candidats
 ADD CONSTRAINT fk_candidats_persones1 FOREIGN KEY (persona_id)
     REFERENCES persones(persona_id);
+
+ALTER TABLE municipis
+DROP CONSTRAINT uk_municipis_codi_ine,
+ADD CONSTRAINT uk_municipis_codi_ine_districte_provincia_id UNIQUE (codi_ine,districte,provincia_id);
