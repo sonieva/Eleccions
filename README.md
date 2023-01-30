@@ -101,3 +101,15 @@ WHERE persona_id IN (SELECT persona_id FROM candidats
 SELECT provincia_id, nom, codi_ine, num_escons
 FROM provincies
 WHERE comunitat_aut_id = (SELECT comunitat_aut_id FROM provincies WHERE nom = 'Barcelona');
+
+
+
+## Mostra tots els municipis que sigui de catalunya;
+## |municipi_id|nom|codi_ide|
+select  m.municipi_id, m.nom, m.codi_ine 
+	FROM municipis m
+    INNER JOIN provincies p ON p.provincia_id = m.provincia_id
+    INNER JOIN comunitats_autonomes c ON c.comunitat_aut_id = p.comunitat_aut_id
+	WHERE c.comunitat_aut_id = (SELECT comunitat_aut_id
+									FROM comunitats_autonomes
+                                    WHERE upper(nom) = 'CATALUÑA');
