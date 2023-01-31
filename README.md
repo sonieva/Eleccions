@@ -115,5 +115,3 @@ select  m.municipi_id, m.nom, m.codi_ine
                                     WHERE upper(nom) = 'CATALUÑA')
     ORDER BY nom;
 
-
-## 
