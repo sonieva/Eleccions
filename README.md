@@ -137,7 +137,7 @@ SELECT v.candidatura_id, p.nom, v.vots, c.nom_curt, c.nom_llarg
 =======
 ### CATEGORIA 4  
 ## 1 pregunta utilitzant WINDOW FUNCTIONS o recursivitat 
-WITH RECURSIVE election_data AS (
+WITH RECURSIVE eleccions_totals AS (
   SELECT m.municipi_id, m.nom, m.codi_ine 
   FROM municipis m
   INNER JOIN provincies p ON p.provincia_id = m.provincia_id
@@ -147,7 +147,7 @@ WITH RECURSIVE election_data AS (
                               WHERE upper(nom) = 'CATALUÑA')
 )
 SELECT *
-FROM election_data
+FROM eleccions_totals
 ORDER BY nom;
 
->>>>>>> cc12efe8452cdc504a08af3ae808c2ef91dc13c9
+
