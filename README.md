@@ -115,3 +115,14 @@ select  m.municipi_id, m.nom, m.codi_ine
                                     WHERE upper(nom) = 'CATALUÑA')
     ORDER BY nom;
 
+
+
+## Mostra la candidatura_id, nom curt, el nom llarg, de la pronvia de Girona
+## |candidatura_id|vots|nom_curt|nom_llarg|
+SELECT v.candidatura_id, v.vots, c.nom_curt, c.nom_llarg
+	FROM vots_candidatures_prov v
+    INNER JOIN provincies p ON p.provincia_id = v.provincia_id
+    INNER JOIN candidatures c ON c.candidatura_id = v.candidatura_id
+	WHERE p.provincia_id = (SELECT provincia_id 
+									FROM provincies
+									WHERE UPPER(nom)= 'GIRONA');
