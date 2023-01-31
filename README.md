@@ -158,6 +158,7 @@ SELECT v.candidatura_id, p.nom, v.vots, c.nom_curt, c.nom_llarg
 =======
 ### CATEGORIA 4  
 ## 1 pregunta utilitzant WINDOW FUNCTIONS o recursivitat 
+```SQL
 WITH RECURSIVE eleccions_totals AS (
   SELECT m.municipi_id, m.nom, m.codi_ine 
   FROM municipis m
@@ -170,5 +171,5 @@ WITH RECURSIVE eleccions_totals AS (
 SELECT *
 FROM eleccions_totals
 ORDER BY nom;
-
+```
 
