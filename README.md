@@ -95,8 +95,6 @@ WHERE persona_id IN (SELECT persona_id FROM candidats
                         WHERE tipus="T")
 
 
-
-
 ## Mostra la provinvia_id, nom, codi_ine, num_escons on la comunitat autonoma sigui Barcelona.
 SELECT provincia_id, nom, codi_ine, num_escons
 FROM provincies
@@ -114,4 +112,20 @@ select  m.municipi_id, m.nom, m.codi_ine
 									FROM comunitats_autonomes
                                     WHERE upper(nom) = 'CATALUÑA')
     ORDER BY nom;
+
+
+### CATEGORIA 4  
+## 1 pregunta utilitzant WINDOW FUNCTIONS o recursivitat 
+WITH RECURSIVE election_data AS (
+  SELECT m.municipi_id, m.nom, m.codi_ine 
+  FROM municipis m
+  INNER JOIN provincies p ON p.provincia_id = m.provincia_id
+  INNER JOIN comunitats_autonomes c ON c.comunitat_aut_id = p.comunitat_aut_id
+  WHERE c.comunitat_aut_id = (SELECT comunitat_aut_id
+                              FROM comunitats_autonomes
+                              WHERE upper(nom) = 'CATALUÑA')
+)
+SELECT *
+FROM election_data
+ORDER BY nom;
 
