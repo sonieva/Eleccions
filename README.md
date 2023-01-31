@@ -104,7 +104,7 @@ WHERE comunitat_aut_id = (SELECT comunitat_aut_id FROM provincies WHERE nom = 'B
 
 
 
-## Mostra tots els municipis que sigui de catalunya;
+## Mostra tots els municipis que sigui de catalunya ordenats pel nom;
 ## |municipi_id|nom|codi_ide|
 select  m.municipi_id, m.nom, m.codi_ine 
 	FROM municipis m
@@ -112,4 +112,6 @@ select  m.municipi_id, m.nom, m.codi_ine
     INNER JOIN comunitats_autonomes c ON c.comunitat_aut_id = p.comunitat_aut_id
 	WHERE c.comunitat_aut_id = (SELECT comunitat_aut_id
 									FROM comunitats_autonomes
-                                    WHERE upper(nom) = 'CATALUÑA');
+                                    WHERE upper(nom) = 'CATALUÑA')
+    ORDER BY nom;
+
