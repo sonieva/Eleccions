@@ -10,7 +10,7 @@ cursor = cnx.cursor()
 
 insert = ("INSERT INTO persones "
           "(nom,cog1,cog2,sexe,dni)\n"
-          "VALUES")
+          "VALUES (%s,%s,%s,%s,%s)")
 
 try:
     with open(path, "r") as fitxer:
@@ -21,13 +21,15 @@ try:
             seg_cog = linia[75:99].strip()
             sexe = linia[100:101]
             dni =  linia[109:119].strip()
-            insert += f"\t('{pri_nom}','{pri_cog}','{seg_cog}','{sexe}','{dni}'),\n"
+            if dni == "":
+                cursor.execute(insert,(pri_nom,pri_cog,seg_cog,sexe,None))
+            else:
+                cursor.execute(insert,(pri_nom,pri_cog,seg_cog,sexe,dni))
 except OSError as e:
     print("No s'ha pogut obrir el fitxer " + path)
 
 insert = insert[:-2] + ";"
-print(insert)
-#cursor.execute(insert)
-#cnx.commit()
-#cursor.close()
-#cnx.close()
+cursor.execute(insert)
+cnx.commit()
+cursor.close()
+cnx.close()
