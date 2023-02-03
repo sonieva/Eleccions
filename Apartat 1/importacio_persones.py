@@ -16,20 +16,18 @@ try:
     with open(path, "r") as fitxer:
         for linia in fitxer:
             #codi = linia[8:14]
-            pri_nom = " ".join(linia[25:49].split()).replace("'", '\\'+"'")
-            pri_cog = " ".join(linia[50:74].split())
-            seg_cog = " ".join(linia[75:99].split()).replace('"','\\'+'"')
+            pri_nom = linia[25:49].strip()
+            pri_cog = linia[50:74].strip()
+            seg_cog = linia[75:99].strip()
             sexe = linia[100:101]
-            dni =  " "" ".join(linia[109:119].split()).replace('','')
-            insert += f"\t('{pri_nom}','{pri_cog}','{seg_cog}','{sexe}','{dni}') ,\n"
+            dni =  linia[109:119].strip()
+            insert += f"\t('{pri_nom}','{pri_cog}','{seg_cog}','{sexe}','{dni}'),\n"
 except OSError as e:
     print("No s'ha pogut obrir el fitxer " + path)
 
-insert=insert.split(" ")
-insert[-1] = ";"
-insert=" ".join(insert)
-#print(insert)
-cursor.execute(insert)
-cnx.commit()
-cursor.close()
-cnx.close()
+insert = insert[:-2] + ";"
+print(insert)
+#cursor.execute(insert)
+#cnx.commit()
+#cursor.close()
+#cnx.close()
