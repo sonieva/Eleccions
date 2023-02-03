@@ -7,7 +7,6 @@ ALTER TABLE candidats
 DROP FOREIGN KEY fk_candidats_persones1;
 
 ALTER TABLE persones
-MODIFY COLUMN dni char(9) NULL,
 MODIFY COLUMN persona_id INT UNSIGNED AUTO_INCREMENT;
 
 ALTER TABLE candidats
