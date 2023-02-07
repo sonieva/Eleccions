@@ -147,13 +147,17 @@ SELECT v.candidatura_id, p.nom, v.vots, c.nom_curt, c.nom_llarg
 								WHERE municipi_id = 21901);
 ```
 
-
-
-
-
-
-
-
+## Volem els nuemros emesos i de taules de cada municipi separats per cada demarcació, sabent que Navarcles es de Barcelona, Maçanet de la selva de Girona, Solsona de Lleida i Salou de Tarragona
+```SQL
+SELECT  DISTINCT m.nom, e.num_meses, e.vots_emesos
+	FROM provincies p			
+    INNER JOIN vots_candidatures_prov v ON p.provincia_id = v.provincia_id
+    INNER JOIN municipis m ON m.provincia_id = v.provincia_id
+    INNER JOIN eleccions_municipis e ON e.municipi_id = m.municipi_id
+	WHERE p.provincia_id = (SELECT provincia_id
+								FROM municipis
+								WHERE lower(nom) = 'navarcles');
+```
 
 =======
 ### CATEGORIA 4  
