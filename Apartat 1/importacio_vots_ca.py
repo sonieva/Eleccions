@@ -14,7 +14,7 @@ insert=("INSERT INTO vots_candidatures_ca"
 try :
     with open(path, "r") as fitxer:
         for linia in fitxer:
-            if linia[9:11] != "99":
+            if linia[11:13] == "99" and linia[9:11] != "99":
                 comunitat_autonoma_id = cursor.execute(
                     f"SELECT comunitat_aut_id FROM comunitats_autonomes WHERE codi_ine = '{linia[9:11]}'")
                 comunitat_autonoma_id = cursor.fetchone()
@@ -27,4 +27,7 @@ except OSError as e:
     print("No s'ha pogut obrir el fitxer " + path)
 
 insert = insert[:-2] + ";"
-print(insert)
+cursor.execute(insert)
+conexion.commit()
+cursor.close()
+conexion.close()

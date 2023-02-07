@@ -16,9 +16,9 @@ try:
     with open(path, "r") as fitxer:
         for linia in fitxer:
             #codi = linia[8:14]
-            pri_nom = linia[25:49].strip()
-            pri_cog = linia[50:74].strip()
-            seg_cog = linia[75:99].strip()
+            pri_nom = linia[25:50].strip()
+            pri_cog = linia[50:75].strip()
+            seg_cog = linia[75:100].strip()
             sexe = linia[100:101]
             dni =  linia[109:119].strip()
             if dni == "":
