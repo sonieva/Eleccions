@@ -12,11 +12,11 @@ insert = ("INSERT INTO municipis"
           "(codi_ine,nom,provincia_id,districte)\n"
           "VALUES")
 try:
-    with open(path, "r") as fitxer:
+    with open(path, "r", encoding="utf-8") as fitxer:
         for linia in fitxer:
             provincia_id = cursor.execute(f"SELECT provincia_id FROM provincies WHERE codi_ine = '{linia[11:13]}'")
             provincia_id = cursor.fetchone()
-            nom = " ".join(linia[18:118].split())
+            nom = linia[18:118].strip()
             codi_ine = linia[13:16]
             districte = linia[16:18]
             insert += f'\t("{codi_ine}","{nom}",{provincia_id[0]},"{districte}"),\n'
