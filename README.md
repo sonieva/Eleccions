@@ -3,8 +3,8 @@
 Hem agafat el model d'eleccions d'abril de 2019 i l'hem descarregat, un cop descarregat en el mateix Workbench tenim l'opció d'exportar-lo a script i obtenir tota l'estructura, només resta canviar el nom de la base de dades.
 
 ## Modificació estructura
-Hem hagut de modificar l'estructura creada anteriorment per adaptarla als diferents errors que hem a anant trobant.
-Totes les sentencies utilitzades estan a l'arxiu [BD_eleccions_v2](https://github.com/sonieva/Eleccions/blob/master/Apartat%201/BD_eleccions_v2.sql)
+Hem hagut de modificar l'estructura creada anteriorment per adaptarla als diferents problemes que hem tingut a l'hora d'importar les dades.
+Totes les modificacions realitzades estan a l'arxiu [BD_eleccions_v2](https://github.com/sonieva/Eleccions/blob/master/Apartat%201/BD_eleccions_v2.sql)
 
 ## Introducció de dades bàsiques
 En aquest apartat hem introduït manualment la seguent sentencia SQL:<br>
