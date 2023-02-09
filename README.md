@@ -1,12 +1,10 @@
 # Apartat 1
 ## Estructura principal
-Hem agafat el model d'eleccions de l'abril el 2019 i l'hem descarregat, un cop descarregat el model hem obert en el workbench el model,
-en el workbench tenim l'opció d'exportar-lo en DML i obtenir totes les sentències, un cop exportat hem canviat alguns paràmetres per
-adequar a la pràctica.
+Hem agafat el model d'eleccions d'abril de 2019 i l'hem descarregat, un cop descarregat en el mateix Workbench tenim l'opció d'exportar-lo a script i obtenir tota l'estructura, només resta canviar el nom de la base de dades.
 
 ## Modificació estructura
 Hem hagut de modificar l'estructura creada anteriorment per adaptarla als diferents errors que hem a anant trobant.
-Totes les sentencies utilitzades estan a l'arxiu [BD_eleccions_v2.sql](https://github.com/sonieva/Eleccions/blob/master/Apartat%201/BD_eleccions_v2.sql)
+Totes les sentencies utilitzades estan a l'arxiu [BD_eleccions_v2](https://github.com/sonieva/Eleccions/blob/master/Apartat%201/BD_eleccions_v2.sql)
 
 ## Introducció de dades bàsiques
 En aquest apartat hem introduït manualment la seguent sentencia SQL:<br>
