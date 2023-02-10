@@ -86,8 +86,7 @@ WHERE tipus="S";
 ```
 
 # CONSULTES SQL CATEGORIA 2
-
-## DIGAM EL NOM COMPLERT DE TOTES LES PERSONES MES LA CANDIDATURA I EL NOM LLARG DE LA CANDIDATURA
+## Digam el nom complert de totes les persones mes la candidatura i el nom llarg de la candidatura
 
 ```SQL
 SELECT p.nom, p.cog1, p.cog2, c.candidat_id, c1.nom_llarg
@@ -97,9 +96,9 @@ SELECT p.nom, p.cog1, p.cog2, c.candidat_id, c1.nom_llarg
     ORDER BY p.nom;
 ```
 
-## MOSTRA TOTES LES PROVINCIES I TOTS EL MUNICIPIS DE CATALUNYA(al nom de provincies li direm nom_pro i municipis nom_mun)
+## Mostra totes les provincies i tots els municipis de catalunya(al nom de provincies li direm nom_pro i municipis nom_mun)
 
-# |codi_ine|pronvincia_id|nom_pro|municipi_id|nom_mun|
+## |codi_ine|pronvincia_id|nom_pro|municipi_id|nom_mun|
 
 ```SQL
 SELECT c.codi_ine, p.provincia_id, p.nom AS nom_pro, m.municipi_id, m.nom AS nom_mun
@@ -109,7 +108,7 @@ SELECT c.codi_ine, p.provincia_id, p.nom AS nom_pro, m.municipi_id, m.nom AS nom
     WHERE upper(c.nom) = 'CATALUNYA';
 ```
 
-#### Fes una consulta on demani el nom de la provincia, el seu codi_ine, candidatura_id i els vots per cada candidatura, i ordena per quantitat de vots
+## Fes una consulta on demani el nom de la provincia, el seu codi_ine, candidatura_id i els vots per cada candidatura, i ordena per quantitat de vots
 
 ```SQL
 SELECT p.nom,p.codi_ine,v.candidatura_id,v.vots FROM vots_candidatures_prov v
@@ -117,7 +116,7 @@ INNER JOIN provincies p ON p.provincia_id = v.provincia_id
 ORDER BY vots;
 ```
 
-## Per cada municipi volem saber el seu nom, a la provincia a la que pertany a mes volem saber el nom de les eleccions a mes de la seva data. També volem que ens filtri per municipis que tinguin mes de 4 cops vots valids que vots en blanc
+## Per cada municipi volem saber el seu nom, a la provincia a la que pertany, també volem saber el nom de les eleccions a mes de la seva data. Finalment volem que ens filtri per municipis que tinguin 4 cops més vots valids que vots en blanc
 
 ```SQL
 SELECT m.nom as nom_municipi, p.nom as nom_provincia, e.nom as nom_eleccions, e.data as data_eleccions FROM municipis m
@@ -127,7 +126,7 @@ INNER JOIN eleccions e ON e.eleccio_id=em.eleccio_id
 WHERE vots_valids>4*vots_blanc;
 ```
 
-### Per cada provincia volem saber el seu nom y el total de vots que ha obtingut cada provincia a mes volem saber el nom de la comunitat autonoma que pertanyen y que es filtri per comunitat_aut_id = 1 i 2
+## Per cada provincia volem saber el seu nom y el total de vots que ha obtingut cada provincia, a mes volem saber el nom de la comunitat autonoma que pertanyen y que es filtri per comunitat_aut_id = 1 i 2
 
 ```SQL
 SELECT p.nom as nom_provincia, sum(vcp.vots) as vots, ca.nom as nom_comunitat_autonoma from provincies p
@@ -137,7 +136,7 @@ WHERE ca.comunitat_aut_id IN (1,2)
 GROUP BY p.provincia_id
 ```
 
-### CATEGORIA 3
+# CONSULTES SQL CATEGORIA 3
 
 ## Busca les persones amb el seu nom, cognoms y el seu sexe que pertanyin al tipus T (Titular)
 
@@ -185,7 +184,7 @@ SELECT v.candidatura_id, p.nom, v.vots, c.nom_curt, c.nom_llarg
         WHERE municipi_id = 21901);
 ```
 
-## Volem els nuemros emesos i de taules de cada municipi separats per cada demarcació, sabent que Navarcles es de Barcelona, Maçanet de la selva de Girona, Solsona de Lleida i Salou de Tarragona
+## Volem els numeros emesos i de taules de cada municipi separats per cada demarcació, sabent que Navarcles es de Barcelona, Maçanet de la selva de Girona, Solsona de Lleida i Salou de Tarragona
 
 ```SQL
 SELECT  DISTINCT m.nom, e.num_meses, e.vots_emesos
@@ -198,9 +197,7 @@ SELECT  DISTINCT m.nom, e.num_meses, e.vots_emesos
         WHERE lower(nom) = 'navarcles');
 ```
 
-=======
-
-### CATEGORIA 4  
+# CONSULTES SQL CATEGORIA 4  
 
 ## 1 pregunta utilitzant WINDOW FUNCTIONS o recursivitat
 
