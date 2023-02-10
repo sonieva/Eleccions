@@ -2,7 +2,7 @@ import mysql.connector
 
 path= "Documentació/02201904_MESA/07021904.DAT"
 cnx = mysql.connector.connect(
-    host= '10.94.255.166',
+    host='10.94.255.166',
     user="perepi",
     password="pastanaga",
     database="Grup2_eleccions"
