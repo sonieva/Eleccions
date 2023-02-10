@@ -28,7 +28,7 @@ tot.execute(
 partit_vots = tot.fetchall()
 
 llista = []
-print(f"\nPOVINCIA DE {x.upper()}")
+print(f"\nPROVINCIA DE {x.upper()}")
 print("-"*30)
 print(f"Vots: {vots_totals[0]}")
 print(f"Vots Blanc: {vots_blancs[0]}")
