@@ -12,8 +12,10 @@ Hem agafat el model relacional de les eleccions d'abril de 2019 i l'hem descarre
 Hem hagut de modificar l'estructura creada anteriorment per adaptarla als diferents problemes que hem tingut a l'hora d'importar les dades.
 Totes les modificacions realitzades estan a l'arxiu [BD_eleccions_v2](https://github.com/sonieva/Eleccions/blob/master/Apartat%201/BD_eleccions_v2.sql)
 
-## Introducció de dades bàsiques
-En aquest apartat hem introduït manualment la seguent sentencia SQL (ja introduïda a l'arxiu BD_eleccions_v2):<br>
+### Introducció de dades bàsiques
+En aquest apartat hem introduït manualment la seguent sentencia SQL (ja introduïda a l'arxiu BD_eleccions_v2):
+
+<br>
 
 ```SQL
 INSERT INTO eleccions (eleccio_id, nom, data)
@@ -23,11 +25,20 @@ VALUES (1,"Eleccions Generals 2019", "2019-04-28")
 I ha quedat aixi a la BD:<br>
 ![Captura taula "Eleccions"](https://github.com/sonieva/Eleccions/blob/master/Documentaci%C3%B3/Imatges/taula_eleccions.png)
 
+### Importació de comunitats autònomes, províncies i municipis
+Per importar aquestes dades hem hagut d'agafar l'arxiu 07021904.DAT per les taules de comunitats autonomes i provincies, i el 05021904.DAT per les taules de municipis i eleccions_municipis
+<br>
+
+#### Programes utilitzats:
+ - [importacio_CCAA.py](https://github.com/sonieva/Eleccions/blob/master/Apartat%201/importacio_CCAA.py)
+ - [importacio_provincies.py](https://github.com/sonieva/Eleccions/blob/master/Apartat%201/importacio_provincies.py)
+ - [importacio_municipis.py](https://github.com/sonieva/Eleccions/blob/master/Apartat%201/importacio_municipis.py)
+
 # Consultes SQL Categoria 1
 
 ### Ex 1
 
-#### Fes una consulta on Ens demani el codi_candidatura i el nom_llarg on el nom_curt sigui EB i ordena de forma descendent candidatura_id
+#### Fes una consulta on ens demani el codi_candidatura i el nom_llarg on el nom_curt sigui "EB" i ordena de forma descendent candidatura_id.
 
 ```SQL
 SELECT codi_candidatura,nom_llarg FROM candidatures
@@ -37,7 +48,7 @@ ORDER BY candidatura_id DESC;
 
 ### Ex 2
 
-### Mostra totes les persones que no tenen DNI assignat
+### Mostra totes les persones que no tenen DNI assignat.
 
 ```SQL
 SELECT nom,cog1,cog2,dni
@@ -57,7 +68,7 @@ SELECT COUNT(*)
 
 ### Ex 4
 
-## Busca per el municipi_id 2 cuants vots te cada candidatura _id per aquest municipi, i ordena de manera asc per vots
+## Busca per el municipi_id 2 cuants vots te cada candidatura_id per aquest municipi, i ordena de manera asc per vots
 
 ```SQL
 SELECT candidatura_id,vots FROM vots_candidatures_mun
@@ -74,7 +85,7 @@ SELECT num_ordre, candidat_id FROM candidats
 WHERE tipus="S";
 ```
 
-## CATEGORIA 2
+# CONSULTES SQL CATEGORIA 2
 
 ## DIGAM EL NOM COMPLERT DE TOTES LES PERSONES MES LA CANDIDATURA I EL NOM LLARG DE LA CANDIDATURA
 
