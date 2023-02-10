@@ -1,24 +1,36 @@
-# Apartat 1
-## Estructura principal
-Hem agafat el model d'eleccions de l'abril el 2019 i l'hem descarregat, un cop descarregat el model hem obert en el workbench el model,
-en el workbench tenim l'opció d'exportar-lo en DML i obtenir totes les sentències, un cop exportat hem canviat alguns paràmetres per
-adequar a la pràctica.
+# Apartat 1: Importació de dades
+La primera tasca que ens han encomanat és la de realitzar una importació de diferents dades dels processos electorals. Per fer-ho realitzarem un petit programa desenvolupat amb Python utilitzant la llibreria mysql.connector
+ 
+Importació a partir de 02201904_MESA.zip
 
-## Modificació estructura
+### Estructura principal
+Hem agafat el model d'eleccions de l'abril el 2019 i l'hem descarregat, un cop descarregat el mateix Workbench te l'eina per exportar el script i obtenir totes les sentències, ara resta canviar el nom de la base de dades.
+
+### Modificació estructura
 Hem hagut de modificar l'estructura creada anteriorment per adaptarla als diferents errors que hem a anant trobant.
 Totes les sentencies utilitzades estan a l'arxiu [BD_eleccions_v2.sql](https://github.com/sonieva/Eleccions/blob/master/Apartat%201/BD_eleccions_v2.sql)
 
-## Introducció de dades bàsiques
-En aquest apartat hem introduït manualment la seguent sentencia SQL:<br>
+### Introducció de dades bàsiques
+En aquest apartat hem introduït manualment la seguent sentencia SQL:
+<br>
 
 ```SQL 
 INSERT INTO eleccions (eleccio_id, nom, data)
 VALUES (1,"Eleccions Generals 2019", "2019-04-28")
 ```
 
-I ha quedat aixi a la BD:<br>
+I ha quedat aixi a la BD:
+<br>
+
 ![Captura taula "Eleccions"](https://github.com/sonieva/Eleccions/blob/master/Documentaci%C3%B3/Imatges/taula_eleccions.png)
 
+### Importació de comunitats autònomes, províncies i municipis
+Per l'importacio d'aquestes dades necessitem el arxiu [07021904.DAT](Documentació/02201904_MESA/07021904.DAT) per les taules de `comunitats_autonomes` i `provincies`. 
+
+I l'arxiu [05021904.DAT](Documentació/02201904_MESA/05021904.DAT) per les taules de `municipis` i `eleccions_municipis`
+
+#### Programes utilitzats:
+- [importacio_CCAA.py](Apartat%201/importacio_CCAA.py)
 
 # Consultes SQL Categoria 1
 ### Ex 1
