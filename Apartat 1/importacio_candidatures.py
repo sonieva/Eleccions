@@ -16,8 +16,8 @@ try:
     with open(path, "r") as fitxer:
         for linia in fitxer:
             codi = linia[8:14]
-            nomCurt = " ".join(linia[14:64].split())
-            nomLlarg = " ".join(linia[64:214].split()).replace("'", '\\'+"'")
+            nomCurt = linia[14:64].strip()
+            nomLlarg = linia[64:214].strip().replace("'", '\\'+"'")
             codiProvincial = linia[214:220]
             codiAutonomic = linia[220:226]
             codiNacional = linia[226:232]
