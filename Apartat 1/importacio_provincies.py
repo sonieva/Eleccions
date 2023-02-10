@@ -10,7 +10,7 @@ cnx = mysql.connector.connect(
 cursor = cnx.cursor()
 insert = ("INSERT INTO provincies"
           "(comunitat_aut_id,nom,codi_ine,num_escons)\n"
-          "VALUES")
+          "VALUES ")
 try:
     with open(path, "r") as fitxer:
         for linia in fitxer:
