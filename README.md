@@ -31,7 +31,9 @@ Per l'importacio d'aquestes dades necessitem el arxiu [07021904.DAT](Documentaci
 
 I l'arxiu [05021904.DAT](Documentació/02201904_MESA/05021904.DAT) per les taules de `municipis` i `eleccions_municipis`
 
-#### Programes utilitzats:
+<br>
+
+Programes utilitzats:
 - [importacio_CCAA.py](Apartat%201/importacio_CCAA.py)
 - [importacio_provincies.py](Apartat%201/importacio_provincies.py)
 - [importacio_municipis.py](Apartat%201/importacio_municipis.py)
@@ -42,7 +44,9 @@ Per aquest apartat hem necessitat el arxiu [03021904.DAT](Documentació/02201904
 
 I el [04021904.DAT](Documentació/02201904_MESA/04021904.DAT) per les taules `persones` i `candidats`
 
-#### Programes utilitzats:
+<br>
+
+Programes utilitzats:
 - [importacio_candidatures.py](Apartat%201/importacio_candidatures.py)
 - [importacio_persones](Apartat%201/importacio_persones.py)
 - [importacio_candidats.py](Apartat%201/importacio_candidats.py)
