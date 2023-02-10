@@ -35,6 +35,11 @@ I l'arxiu [05021904.DAT](Documentació/02201904_MESA/05021904.DAT) per les taule
 - [importacio_municipis.py](Apartat%201/importacio_municipis.py)
 - [importacio_eleccions_municipis.py](Apartat%201/importacio_eleccions_municipis.py)
 
+### Importació de candidatures, candidats i persones
+Per aquest apartat hem necessitat el arxiu [03021904.DAT](Documentació/02201904_MESA/03021904.DAT) per la taula `candidatures`.
+
+I el [04021904.DAT](Documentació/02201904_MESA/04021904.DAT) per les taules `persones` i `candidats`
+
 # Consultes SQL Categoria 1
 ### Ex 1
 #### Fes una consulta on Ens demani el codi_candidatura i el nom_llarg on el nom_curt sigui EB i ordena de forma descendent candidatura_id
