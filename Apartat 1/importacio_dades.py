@@ -204,8 +204,8 @@ def ProgramaPrincipal(host, user, pasw, bd):
     cursor.close()
     conexion.close()
 
-
-host = input("Introdueix el host: ")
+print("Benvingut al programa d'importació de dades de les eleccions d'abril de 2019\n")
+host = input("Introdueix el host (X.X.X.X): ")
 user = input("Introdueix l'usuari: ")
 pasw = input("Introdueix la contrasenya: ")
 bd = input("Introdueix la base de dades: ")
