@@ -20,8 +20,8 @@ SELECT candidatura_id,vots
 WHERE municipi_id = 650
 ORDER BY vots ASC;
 
--- Mostra el nom i el cognom de les persones que s'anomenin igual que algun membre del grup
-SELECT nom,cog1 
+-- Mostra el nom i el cognom de les persones que es diguin igual que algun membre del grup
+SELECT nom,cog1
 	FROM persones
-WHERE nom IN ("Jordi","Marc","Hemant","Santiago")
+WHERE nom IN ("Jordi","Mark","Hemant","Santiago")
 ORDER BY nom;
