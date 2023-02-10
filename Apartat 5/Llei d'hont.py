@@ -26,10 +26,7 @@ tot = conexion.cursor()
 tot.execute(
     f"Select  nom_curt, vp.vots  from provincies p INNER JOIN  vots_candidatures_prov vp on vp.provincia_id=p.provincia_id INNER JOIN candidatures c on c.candidatura_id = vp.candidatura_id where p.provincia_id=(SELECT provincia_id FROM provincies WHERE lower(nom) = '{x}') and vp.vots/(SELECT sum(vots) as vots FROM vots_candidatures_prov where provincia_id = (SELECT provincia_id FROM provincies WHERE lower(nom) = '{x}')) * 100 >= 3;")
 partit_vots = tot.fetchall()
-
-dictio = {}
 llista = []
-llista2 = []
 print(f"\nPOVINCIA DE {x.upper()}")
 print("-"*30)
 print(f"Vots: {vots_totals[0]}")
