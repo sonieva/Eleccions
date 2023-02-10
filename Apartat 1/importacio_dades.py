@@ -87,7 +87,6 @@ def ImportarPersones(cursor):
         "INSERT INTO persones (nom,cog1,cog2,sexe,dni) VALUES (%s,%s,%s,%s,%s)")
     with open(path, "r") as fitxer:
         for linia in fitxer:
-            #codi = linia[8:14]
             pri_nom = linia[25:50].strip()
             pri_cog = linia[50:75].strip()
             seg_cog = linia[75:100].strip()
