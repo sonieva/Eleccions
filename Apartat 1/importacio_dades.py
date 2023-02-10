@@ -183,12 +183,12 @@ def ImportarVotsAutonomic(cursor):
                     insert, (comunitat_autonoma_id[0], candidatura_id[0], vots))
 
 
-def ProgramaPrincipal(host, user, pasw):
+def ProgramaPrincipal(host, user, pasw, bd):
     conexion = mysql.connector.connect(
         host=host,
         user=user,
         password=pasw,
-        database="pruebas_elecciones")
+        database=bd)
     cursor = conexion.cursor()
     ImportarComunitatsAutonomes(cursor)
     ImportarProvincies(cursor)
@@ -208,5 +208,6 @@ def ProgramaPrincipal(host, user, pasw):
 host = input("Introdueix el host: ")
 user = input("Introdueix l'usuari: ")
 pasw = input("Introdueix la contrasenya: ")
-ProgramaPrincipal(host, user, pasw)
+bd = input("Introdueix la base de dades: ")
+ProgramaPrincipal(host, user, pasw, bd)
 print("\nLes dades s'han importat correctament!\n")
