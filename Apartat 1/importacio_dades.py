@@ -203,7 +203,7 @@ def ProgramaPrincipal(host, user, pasw, bd):
     cursor.close()
     conexion.close()
 
-print("Benvingut al programa d'importació de dades de les eleccions d'abril de 2019\n")
+print("Benvingut al programa d'importació de dades de les eleccions de Febrer d'Abril del 2019\n")
 host = input("Introdueix el host (X.X.X.X): ")
 user = input("Introdueix l'usuari: ")
 pasw = input("Introdueix la contrasenya: ")
