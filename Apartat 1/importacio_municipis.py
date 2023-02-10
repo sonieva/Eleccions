@@ -16,7 +16,7 @@ try:
         for linia in fitxer:
             provincia_id = cursor.execute(f"SELECT provincia_id FROM provincies WHERE codi_ine = '{linia[11:13]}'")
             provincia_id = cursor.fetchone()
-            nom = linia[18:118].strip()
+            nom = " ".join(linia[18:118].split())
             codi_ine = linia[13:16]
             districte = linia[16:18]
             insert += f'\t("{codi_ine}","{nom}",{provincia_id[0]},"{districte}"),\n'

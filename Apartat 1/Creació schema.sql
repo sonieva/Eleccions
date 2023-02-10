@@ -37,7 +37,7 @@ CREATE TABLE IF NOT EXISTS `Grup2_eleccions`.`provincies` (
   `comunitat_aut_id` TINYINT UNSIGNED NOT NULL,
   `nom` VARCHAR(45) NULL,
   `codi_ine` CHAR(2) NOT NULL,
-  `num_escons` TINYINT UNSIGNED NULL COMMENT "Numero d\'escons que li pertoquen a aquella provincia",
+  `num_escons` TINYINT UNSIGNED NULL COMMENT 'Numero d\'escons que li pertoquen a aquella provincia',
   PRIMARY KEY (`provincia_id`),
   UNIQUE INDEX `uk_provincies_codi_ine` (`codi_ine` ASC) VISIBLE,
   INDEX `idx_fk_provincies_comunitats_autonomes` (`comunitat_aut_id` ASC) VISIBLE,
@@ -75,9 +75,9 @@ ENGINE = InnoDB;
 CREATE TABLE IF NOT EXISTS `Grup2_eleccions`.`eleccions` (
   `eleccio_id` TINYINT UNSIGNED NOT NULL AUTO_INCREMENT,
   `nom` VARCHAR(45) NULL,
-  `data` DATE NOT NULL COMMENT "Data (dia mes i any) de quan s\'han celebrat les eleccions",
-  `any` YEAR GENERATED ALWAYS AS (YEAR(data))  COMMENT "any el qual s\'han celebrat les eleccions",
-  `mes` TINYINT GENERATED ALWAYS AS (MONTH(data)) STORED COMMENT "El mes que s\'han celebrat les eleccions",
+  `data` DATE NOT NULL COMMENT 'Data (dia mes i any) de quan s\'han celebrat les eleccions',
+  `any` YEAR GENERATED ALWAYS AS (YEAR(data))  COMMENT 'any el qual s\'han celebrat les eleccions',
+  `mes` TINYINT GENERATED ALWAYS AS (MONTH(data)) STORED COMMENT 'El mes que s\'han celebrat les eleccions',
   PRIMARY KEY (`eleccio_id`),
   UNIQUE INDEX `uk_eleccions_any_mes` (`any` ASC, `mes` ASC) VISIBLE,
   UNIQUE INDEX `uk_eleccions_data` (`data` ASC) VISIBLE)
