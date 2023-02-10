@@ -5,7 +5,7 @@ SELECT c.candidat_id, p.nom, p.cog1, p.cog2, c1.nom_llarg
 	INNER JOIN candidatures c1 ON c.candidatura_id = c1.candidatura_id
 ORDER BY p.nom;
 
--- Mostra el codi_ine,provincia_id i el nom de totes les provincies i el municipi_id i el nom de tots els municipis de "Cataluña". El camp nom de provincia s'anomenara nom_pro, i el nom del municipi nom_mun
+-- Mostra el codi_ine,provincia_id i el nom de totes les provincies com a nom_pro i el municipi_id i el nom de tots els municipis com a nom_mun de "Cataluña".
 SELECT c.codi_ine, p.provincia_id,
 		p.nom AS nom_pro, 
         m.municipi_id, 
@@ -27,9 +27,9 @@ SELECT 	m.nom as nom_municipi,
         e.nom as nom_eleccions, 
         e.data as data_eleccions 
 	FROM municipis m
-	INNER JOIN provincies p ON m.provincia_id=p.provincia_id
-	INNER JOIN eleccions_municipis em ON em.municipi_id=m.municipi_id
-	INNER JOIN eleccions e ON e.eleccio_id=em.eleccio_id
+	INNER JOIN provincies p ON m.provincia_id = p.provincia_id
+	INNER JOIN eleccions_municipis em ON em.municipi_id = m.municipi_id
+	INNER JOIN eleccions e ON e.eleccio_id = em.eleccio_id
 WHERE em.vots_valids>(4*em.vots_blanc);
 
 -- Per cada provincia de la comunitat_aut_id = 1 i comunitat_aud_id = 2, volem saber el seu nom i el total de vots que ha obtingut cada provincia, a mes, volem saber el nom de la comunitat autonoma.
