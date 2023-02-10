@@ -31,6 +31,9 @@ I l'arxiu [05021904.DAT](Documentació/02201904_MESA/05021904.DAT) per les taule
 
 #### Programes utilitzats:
 - [importacio_CCAA.py](Apartat%201/importacio_CCAA.py)
+- [importacio_provincies.py](Apartat%201/importacio_provincies.py)
+- [importacio_municipis.py](Apartat%201/importacio_municipis.py)
+- [importacio_eleccions_municipis.py](Apartat%201/importacio_eleccions_municipis.py)
 
 # Consultes SQL Categoria 1
 ### Ex 1
