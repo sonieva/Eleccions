@@ -31,3 +31,12 @@ WHERE p.provincia_id = (	SELECT provincia_id
 								FROM municipis
 							WHERE nom = 'Purchena'	)
 ORDER BY v.vots DESC;
+
+-- Mostra la provincia_id, el nom de la provincia, el nom curt i el nom llarg de la candidatura i els vots de les candidatures que tinguin un numero de vots superior a les candidatures votades a nivell provincial. Ordena per numero de vots
+SELECT p.provincia_id, p.nom, c.nom_curt, c.nom_llarg, v.vots
+	FROM candidatures c
+    INNER JOIN vots_candidatures_prov v ON v.candidatura_id = c.candidatura_id
+    INNER JOIN provincies p ON p.provincia_id = v.provincia_id
+    WHERE v.vots > (SELECT round(AVG(vots),0)
+						FROM vots_candidatures_prov)
+	ORDER BY v.vots;
