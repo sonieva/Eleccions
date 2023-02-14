@@ -198,7 +198,7 @@ WITH RECURSIVE eleccions_totals AS (
     INNER JOIN provincies p ON p.provincia_id = m.provincia_id
     INNER JOIN comunitats_autonomes c ON c.comunitat_aut_id = p.comunitat_aut_id
   WHERE c.comunitat_aut_id = (  SELECT comunitat_aut_id
-                                    FROM comunitats_autonomes
+                                FROM comunitats_autonomes
                                 WHERE upper(nom) = 'CATALUÑA'   ))
 
 SELECT *
