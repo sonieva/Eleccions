@@ -14,7 +14,6 @@ vots_totals = cursor.fetchone()
 cursor.execute(
     f"SELECT sum(vots_blanc) as VotsBlancs FROM eleccions_municipis em INNER JOIN municipis m on m.municipi_id=em.municipi_id WHERE m.provincia_id=(SELECT provincia_id FROM provincies WHERE lower(nom)='{x}')")
 vots_blancs = cursor.fetchone()
-
 cursor.execute(
     f"SELECT sum(vots_nuls) as VotsNuls FROM eleccions_municipis em INNER JOIN municipis m on m.municipi_id=em.municipi_id WHERE m.provincia_id=(SELECT provincia_id FROM provincies WHERE lower(nom)='{x}')")
 vots_nulls = cursor.fetchone()
