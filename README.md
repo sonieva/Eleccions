@@ -206,3 +206,14 @@ SELECT *
 ORDER BY nom;
 ```
 
+# Apartat 5: Llei d'hondt 
+Per acabar, ens han demanat fer un  programa que mostri el nº d’escons per una província passada per paràmetre.
+
+<br>
+
+Exemple de resultat a mostrar per la província de Segovia:
+<br>
+
+![exemple_lleihont](Documentació/Imatges/exemple_lleid'hondt.png)
+
+Arxiu programa: [llei_d'hondt.py](Apartat%205/Llei%20d'hont.py)
