@@ -40,7 +40,7 @@ for item in llistaEscons:
     if nom in PartitsEscons:
         PartitsEscons[nom] += 1
     else:
-        PartitsEscons[nom] = 1
+        PartitsEscons[nom] = 1 
 for partit2, escons2 in PartitsEscons.items():
     print(f"{partit2} : {escons2}")
 cursor.close()
