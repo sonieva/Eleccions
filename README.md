@@ -156,9 +156,7 @@ En aquesta categroia hem fet ús de subconsultes
 -- Mostra el sexe, cognoms i nom de les persones que pertanyin al tipus "T" (Titular)
 SELECT nom, concat(cog1," ",cog2) as cognoms, sexe 
 	FROM persones
-WHERE persona_id IN (	SELECT persona_id 
-							FROM candidats
-						WHERE tipus = "T"	);
+WHERE persona_id IN (SELECT persona_id  FROM candidats WHERE tipus = "T");
                         
 -- Mostra el nom de la comunitat autonoma amb el major numero de vots per la candidatura_id = 95
 SELECT nom
