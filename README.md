@@ -186,8 +186,8 @@ SELECT p.provincia_id, p.nom, c.nom_curt, c.nom_llarg, v.vots
 	FROM candidatures c
     INNER JOIN vots_candidatures_prov v ON v.candidatura_id = c.candidatura_id
     INNER JOIN provincies p ON p.provincia_id = v.provincia_id
-    WHERE v.vots > (SELECT ROUND(AVG(vots),0) FROM vots_candidatures_prov)
-	ORDER BY v.vots;
+WHERE v.vots > (SELECT ROUND(AVG(vots),0) FROM vots_candidatures_prov)
+ORDER BY v.vots;
 ```
 Arxiu d'orgien: [sentencies_categoria_3.sql](Apartat%202/sentencies_categoria_3.sql)
 
