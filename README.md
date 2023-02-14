@@ -172,9 +172,7 @@ SELECT  m.municipi_id, m.nom, m.codi_ine
 	FROM municipis m
     INNER JOIN provincies p ON p.provincia_id = m.provincia_id
     INNER JOIN comunitats_autonomes c ON c.comunitat_aut_id = p.comunitat_aut_id
-WHERE c.comunitat_aut_id = (	SELECT comunitat_aut_id
-									FROM comunitats_autonomes
-								WHERE upper(nom) = 'CATALUÑA'	)
+WHERE c.comunitat_aut_id = (SELECT comunitat_aut_id FROM comunitats_autonomes WHERE upper(nom) = 'CATALUÑA')
 ORDER BY nom;
 
 -- Mostra el nom llarg com nom_partit i el numero de vots de les candidatures votades a nivell provincial de la provincia del municipi de Purchena. Ordena per numero de vots de forma descendent
@@ -182,9 +180,7 @@ SELECT c.nom_llarg AS nom_partit, v.vots
 	FROM vots_candidatures_prov v
     INNER JOIN provincies p ON p.provincia_id = v.provincia_id
     INNER JOIN candidatures c ON c.candidatura_id = v.candidatura_id
-WHERE p.provincia_id = (	SELECT provincia_id 
-								FROM municipis
-							WHERE nom = 'Purchena'	)
+WHERE p.provincia_id = (SELECT provincia_id FROM municipis WHERE nom = 'Purchena')
 ORDER BY v.vots DESC;
 ```
 Arxiu d'orgien: [sentencies_categoria_3.sql](Apartat%202/sentencies_categoria_3.sql)
@@ -197,9 +193,7 @@ WITH RECURSIVE eleccions_totals AS (
     FROM municipis m
     INNER JOIN provincies p ON p.provincia_id = m.provincia_id
     INNER JOIN comunitats_autonomes c ON c.comunitat_aut_id = p.comunitat_aut_id
-  WHERE c.comunitat_aut_id = (  SELECT comunitat_aut_id
-                                FROM comunitats_autonomes
-                                WHERE upper(nom) = 'CATALUÑA'   ))
+  WHERE c.comunitat_aut_id = (SELECT comunitat_aut_id FROM comunitats_autonomes WHERE upper(nom) = 'CATALUÑA'))
 
 SELECT *
     FROM eleccions_totals
