@@ -165,7 +165,7 @@ SELECT nom
     INNER JOIN candidatures c ON c.candidatura_id = vca.candidatura_id
 WHERE c.candidatura_id = 95 AND vca.vots = (SELECT MAX(vots) FROM vots_candidatures_ca WHERE candidatura_id = 95);
 
--- Mostra tots els municipis de "Cataluña" ordenats pel nom;
+-- Mostra el municipi_id, nom i codi_ine de tots els municipis de "Cataluña" ordenats pel nom;
 SELECT  m.municipi_id, m.nom, m.codi_ine 
 	FROM municipis m
     INNER JOIN provincies p ON p.provincia_id = m.provincia_id
