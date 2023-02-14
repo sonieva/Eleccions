@@ -43,3 +43,5 @@ for item in llistaEscons:
         PartitsEscons[nom] = 1
 for partit2, escons2 in PartitsEscons.items():
     print(f"{partit2} : {escons2}")
+cursor.close()
+conexion.close()
