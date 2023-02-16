@@ -36,7 +36,7 @@ for partit, vots in partit_vots:
 llistaEscons = sorted(zip(llista), reverse=True)[:esconss[0]]
 PartitsEscons = {}
 for item in llistaEscons:
-    nom = item[0].strip().split(',')[1]
+    nom = item[0].split(',')[1]
     if nom in PartitsEscons:
         PartitsEscons[nom] += 1
     else:
