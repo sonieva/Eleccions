@@ -63,6 +63,20 @@ Programa: [importacio_dades.py](Apartat%201/importacio_dades.py)
 
 <br>
 
+Exemple d'execució amb la base de dades ja creada:
+<br>
+
+![exemple_importacio1](Documentació/Imatges/exemple_importacio1.png)
+
+<br>
+
+Exemple d'execucio amb la base de dades sense crear: 
+<br>
+
+![exemple_importacio2](Documentació/Imatges/exemple_importacio2.png)
+
+<br>
+
 # Apartat 2: Creació de sentències de consulta SQL
 La segona tasca que ens han encomenat es una vegada tenim les dades ja importades hem de realitzar diferents consultes a la base de dades per comprovar que han sigut correctament importades
 
