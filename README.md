@@ -56,6 +56,13 @@ Per l'ultim apartat hem utilitzat el arxiu [06021904.DAT](Documentació/02201904
 
 I per les taules `vots_candidatures_prov` i `vots_candidatures_mun` ens hem ajudat de l'arxiu [08021904.DAT](Documentació/02201904_MESA/08021904.DAT)
 
+<br>
+
+Programes utilitzats:
+- [importacio_vots_ca.py](Apartat%201/importacio_vots_ca.py)
+- [importacio_vots_mun.py](Apartat%201/importacio_vots_mun.py)
+- [importacio_vots_prov.py](Apartat%201/importacio_vots_prov.py)
+
 ## Estructura del programa en pseudocodi
 En acabar cada programa de forma individual, hem juntat tots en un sol arxiu .py per facilitar la tasca de introduir els valors a la base de dades. El programa esta realitzat de tal manera que demana el host, l'usuari, la contrasenya i la base de dades on es vol fer la importacio de les dades.
 
