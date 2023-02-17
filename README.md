@@ -215,7 +215,7 @@ Arxiu d'orgien: [sentencies_categoria_3.sql](Apartat%202/sentencies_categoria_3.
 ## Categoria 4  
 En l'ultima categoria nomes hem fet 1 consulta utilizant les window functions 
 ```SQL
-WITH RECURSIVE eleccions_totals AS (
+WITH eleccions_totals AS (
   SELECT m.municipi_id, m.nom, m.codi_ine 
     FROM municipis m
     INNER JOIN provincies p ON p.provincia_id = m.provincia_id
