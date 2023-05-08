@@ -227,7 +227,7 @@ def AplicarCanvis(cursor, nom):
 
 
 def ImportarComunitatsAutonomes(cursor):
-    path = "Documentació/02201904_MESA/07021904.DAT"
+    path = "../Documentació/02201904_MESA/07021904.DAT"
     insert = ("INSERT INTO comunitats_autonomes (codi_ine,nom) VALUES (%s,%s)")
     with open(path, "r") as fitxer:
         for linia in fitxer:
@@ -239,7 +239,7 @@ def ImportarComunitatsAutonomes(cursor):
 
 
 def ImportarProvincies(cursor):
-    path = "Documentació/02201904_MESA/07021904.DAT"
+    path = "../Documentació/02201904_MESA/07021904.DAT"
     insert = (
         "INSERT INTO provincies (comunitat_aut_id,nom,codi_ine,num_escons) VALUES (%s,%s,%s,%s)")
     with open(path, "r") as fitxer:
@@ -256,7 +256,7 @@ def ImportarProvincies(cursor):
 
 
 def ImportarMunicipis(cursor):
-    path = "Documentació/02201904_MESA/05021904.DAT"
+    path = "../Documentació/02201904_MESA/05021904.DAT"
     insert = (
         "INSERT INTO municipis (codi_ine,nom,provincia_id,districte) VALUES (%s,%s,%s,%s)")
     with open(path, "r") as fitxer:
@@ -271,7 +271,7 @@ def ImportarMunicipis(cursor):
 
 
 def ImportarEleccionsMunicipis(cursor):
-    path = "Documentació/02201904_MESA/05021904.DAT"
+    path = "../Documentació/02201904_MESA/05021904.DAT"
     insert = ("INSERT INTO eleccions_municipis (eleccio_id,municipi_id,num_meses,cens,vots_emesos,vots_valids,vots_candidatures,vots_blanc,vots_nuls) VALUES (%s,%s,%s,%s,%s,%s,%s,%s,%s)")
     with open(path, "r") as fitxer:
         for linia in fitxer:
@@ -292,7 +292,7 @@ def ImportarEleccionsMunicipis(cursor):
 
 
 def ImportarCandidatures(cursor):
-    path = "Documentació/02201904_MESA/03021904.DAT"
+    path = "../Documentació/02201904_MESA/03021904.DAT"
     insert = ("INSERT INTO candidatures (eleccio_id,codi_candidatura,nom_curt,nom_llarg,codi_acumulacio_provincia,codi_acumulacio_ca,codi_acumulario_nacional) VALUES (%s,%s,%s,%s,%s,%s,%s)")
     with open(path, "r") as fitxer:
         for linia in fitxer:
@@ -307,7 +307,7 @@ def ImportarCandidatures(cursor):
 
 
 def ImportarPersones(cursor):
-    path = "Documentació/02201904_MESA/04021904.DAT"
+    path = "../Documentació/02201904_MESA/04021904.DAT"
     insert = (
         "INSERT INTO persones (nom,cog1,cog2,sexe,dni) VALUES (%s,%s,%s,%s,%s)")
     with open(path, "r") as fitxer:
@@ -324,7 +324,7 @@ def ImportarPersones(cursor):
 
 
 def ImportarCandidats(cursor):
-    path = "Documentació/02201904_MESA/04021904.DAT"
+    path = "../Documentació/02201904_MESA/04021904.DAT"
     insert = ("INSERT INTO candidats (candidatura_id,persona_id,provincia_id,num_ordre,tipus) VALUES (%s,%s,%s,%s,%s)")
     noms = []
     with open(path, "r") as fitxer:
@@ -355,7 +355,7 @@ def ImportarCandidats(cursor):
 
 
 def ImportarVotsMunicipal(cursor):
-    path = "Documentació/02201904_MESA/06021904.DAT"
+    path = "../Documentació/02201904_MESA/06021904.DAT"
     insert = ("INSERT INTO vots_candidatures_mun (eleccio_id,municipi_id,candidatura_id,vots) VALUES (%s,%s,%s,%s)")
     with open(path, "r") as fitxer:
         for linia in fitxer:
@@ -372,7 +372,7 @@ def ImportarVotsMunicipal(cursor):
 
 
 def ImportarVotsProvincial(cursor):
-    path = "Documentació/02201904_MESA/08021904.DAT"
+    path = "../Documentació/02201904_MESA/08021904.DAT"
     insert = ("INSERT INTO vots_candidatures_prov (provincia_id,candidatura_id,vots,candidats_obtinguts) VALUES (%s,%s,%s,%s)")
     with open(path, "r") as fitxer:
         for linia in fitxer:
@@ -390,7 +390,7 @@ def ImportarVotsProvincial(cursor):
 
 
 def ImportarVotsAutonomic(cursor):
-    path = "Documentació/02201904_MESA/08021904.DAT"
+    path = "../Documentació/02201904_MESA/08021904.DAT"
     insert = (
         "INSERT INTO vots_candidatures_ca (comunitat_autonoma_id,candidatura_id,vots) VALUES (%s,%s,%s)")
     with open(path, "r") as fitxer:
